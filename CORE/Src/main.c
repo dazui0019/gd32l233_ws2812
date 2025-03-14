@@ -4,21 +4,18 @@
 #include "gd32l23x_eval.h"
 #include "basic_os.h"
 #include <stddef.h>
-#include "SEGGER_RTT.h"
+#include "printf.h"
+#include "elog.h"
+#include "ws2812_thread.h"
 
 /* Stack for BasicOS */
-__attribute__((used)) uint8_t stack[10240];
-
-/*!
-    \brief      main function
-    \param[in]  none
-    \param[out] none
-    \retval     none
-*/
+__attribute__((used)) uint8_t stack[5120];
 
 int main(void)
 {
-    SEGGER_RTT_printf(0, "Hello World!\r\n");
+    elog_init();
+    elog_start();
+    log_i("Hello, World!");
     /* configure systick */
     systick_config();
     /* 启动BasicOS */
@@ -27,3 +24,5 @@ int main(void)
 
     return 0;
 }
+
+bos_task_export(ws2812, task_entry_ws2812, BOS_MAX_PRIORITY, NULL);
