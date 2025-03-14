@@ -57,7 +57,8 @@
         "ws2812_thread.h": "c",
         "stddef.h": "c",
         "drv_2812b.h": "c",
-        "basic_os.h": "c"
+        "basic_os.h": "c",
+        "elog.h": "c"
     },
     "C_Cpp.default.includePath": [
         "CORE\\Inc",
@@ -70,7 +71,6 @@
         "Middlewares\\BasicOS",
         "Drivers\\ws2812b\\src",
         "Drivers\\ws2812b\\interface",
-        "Drivers\\ws2812b\\test",
         "D:\\ProgramFiles\\Keil_v5\\ARM\\Packs\\ARM\\CMSIS\\6.1.0\\CMSIS\\Core\\Include"
     ],
     "C_Cpp.default.defines": [

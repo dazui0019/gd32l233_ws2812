@@ -721,6 +721,61 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Libraries/printf</GroupName>
+          <Files>
+            <File>
+              <FileName>printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\printf\printf.c</FilePath>
+            </File>
+            <File>
+              <FileName>printf_config.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Libraries\printf\printf_config.h</FilePath>
+            </File>
+            <File>
+              <FileName>port_printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\printf\port_printf.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Libraries/elog</GroupName>
+          <Files>
+            <File>
+              <FileName>elog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\elog\src\elog.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\elog\port\elog_port.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog_async.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\elog\src\elog_async.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog_buf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\elog\src\elog_buf.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\elog\src\elog_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog_cfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Libraries\elog\inc\elog_cfg.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
