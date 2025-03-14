@@ -27,6 +27,11 @@
  */
  
 #include <elog.h>
+#include "SEGGER_RTT.h"
+#include "printf.h"
+#include "basic_os.h"
+
+static uint32_t out_lock = false;
 
 /**
  * EasyLogger port initialize
@@ -37,7 +42,14 @@ ElogErrCode elog_port_init(void) {
     ElogErrCode result = ELOG_NO_ERR;
 
     /* add your code here */
-    
+    /* set EasyLogger log format */
+    elog_set_fmt(ELOG_LVL_ASSERT, ELOG_FMT_ALL);
+    elog_set_fmt(ELOG_LVL_ERROR, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_WARN, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_INFO, ELOG_FMT_LVL | ELOG_FMT_TAG | ELOG_FMT_TIME);
+    elog_set_fmt(ELOG_LVL_DEBUG, ELOG_FMT_ALL & ~(ELOG_FMT_T_INFO | ELOG_FMT_P_INFO));
+    elog_set_fmt(ELOG_LVL_VERBOSE, ELOG_FMT_ALL & ~(ELOG_FMT_FUNC | ELOG_FMT_T_INFO | ELOG_FMT_P_INFO));
+
     return result;
 }
 
@@ -60,7 +72,7 @@ void elog_port_deinit(void) {
 void elog_port_output(const char *log, size_t size) {
     
     /* add your code here */
-    
+    SEGGER_RTT_Write(0, log, size);
 }
 
 /**
@@ -69,7 +81,10 @@ void elog_port_output(const char *log, size_t size) {
 void elog_port_output_lock(void) {
     
     /* add your code here */
-    
+    while (out_lock != false){ // 等待上一次输出完成
+        bos_delay_ms(1);
+    }
+    out_lock = true;
 }
 
 /**
@@ -78,6 +93,7 @@ void elog_port_output_lock(void) {
 void elog_port_output_unlock(void) {
     
     /* add your code here */
+    out_lock = false;
     
 }
 
@@ -89,7 +105,9 @@ void elog_port_output_unlock(void) {
 const char *elog_port_get_time(void) {
     
     /* add your code here */
-    
+    static char cur_system_time[16] = "";
+    snprintf(cur_system_time, 16, "%u", bos_time()); // get basic os ticks
+    return cur_system_time;
 }
 
 /**
@@ -100,7 +118,7 @@ const char *elog_port_get_time(void) {
 const char *elog_port_get_p_info(void) {
     
     /* add your code here */
-    
+    return "";
 }
 
 /**
@@ -111,5 +129,5 @@ const char *elog_port_get_p_info(void) {
 const char *elog_port_get_t_info(void) {
     
     /* add your code here */
-    
+    return "";
 }
