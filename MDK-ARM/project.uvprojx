@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>GD32L233</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE\Inc;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\GD32L23x_standard_peripheral\Include;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\CMSIS\GD\GD32L23x\Include;..\Drivers\SEGGER_RTT_V820\Config;..\Drivers\SEGGER_RTT_V820\RTT;..\Libraries\elog\inc;..\Libraries\printf;..\Middlewares\BasicOS</IncludePath>
+              <IncludePath>..\CORE\Inc;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\GD32L23x_standard_peripheral\Include;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\CMSIS\GD\GD32L23x\Include;..\Drivers\SEGGER_RTT_V820\Config;..\Drivers\SEGGER_RTT_V820\RTT;..\Libraries\elog\inc;..\Libraries\printf;..\Middlewares\BasicOS;..\Drivers\ws2812b\src;..\Drivers\ws2812b\interface</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -403,6 +403,11 @@
               <FileName>gd32l23x_eval.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\CORE\Src\gd32l23x_eval.c</FilePath>
+            </File>
+            <File>
+              <FileName>ws2812_thread.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\CORE\Src\ws2812_thread.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -672,6 +677,46 @@
               <FileName>startup_gd32l233xx.s</FileName>
               <FileType>2</FileType>
               <FilePath>..\Drivers\GD32L23x_Firmware_Library_V2.2.0\CMSIS\GD\GD32L23x\Source\ARM\startup_gd32l233xx.s</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/ws2812</GroupName>
+          <Files>
+            <File>
+              <FileName>driver_ws2812b.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\ws2812b\src\driver_ws2812b.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_ws2812b_interface.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\ws2812b\interface\driver_ws2812b_interface.c</FilePath>
+            </File>
+            <File>
+              <FileName>drv_2812b.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\ws2812b\src\drv_2812b.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/Seeger_RTT</GroupName>
+          <Files>
+            <File>
+              <FileName>SEGGER_RTT.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\SEGGER_RTT_V820\RTT\SEGGER_RTT.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_RTT_printf.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\SEGGER_RTT_V820\RTT\SEGGER_RTT_printf.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEGGER_RTT_Conf.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\SEGGER_RTT_V820\Config\SEGGER_RTT_Conf.h</FilePath>
             </File>
           </Files>
         </Group>

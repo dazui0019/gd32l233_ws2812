@@ -49,7 +49,15 @@
         "systick.h": "c",
         "core_cm23.h": "c",
         "cmsis_compiler.h": "c",
-        "cmsis_gcc.h": "c"
+        "cmsis_gcc.h": "c",
+        "driver_ws2812b_interface.h": "c",
+        "driver_ws2812b.h": "c",
+        "driver_ws2812b_write_test.h": "c",
+        "segger_rtt.h": "c",
+        "ws2812_thread.h": "c",
+        "stddef.h": "c",
+        "drv_2812b.h": "c",
+        "basic_os.h": "c"
     },
     "C_Cpp.default.includePath": [
         "CORE\\Inc",
@@ -60,6 +68,9 @@
         "Libraries\\elog\\inc",
         "Libraries\\printf",
         "Middlewares\\BasicOS",
+        "Drivers\\ws2812b\\src",
+        "Drivers\\ws2812b\\interface",
+        "Drivers\\ws2812b\\test",
         "D:\\ProgramFiles\\Keil_v5\\ARM\\Packs\\ARM\\CMSIS\\6.1.0\\CMSIS\\Core\\Include"
     ],
     "C_Cpp.default.defines": [

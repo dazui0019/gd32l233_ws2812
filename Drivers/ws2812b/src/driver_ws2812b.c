@@ -70,32 +70,32 @@ uint8_t ws2812b_init(ws2812b_handle_t *handle)
     }
     if (handle->spi_10mhz_init == NULL)                                  /* check spi_10mhz_init */
     {
-        handle->debug_print("ws2812b: spi_10mhz_init is null.\n");       /* spi_10mhz_init is null */
+        handle->debug_print("ws2812b: spi_10mhz_init is null.\r\n");       /* spi_10mhz_init is null */
        
         return 3;                                                        /* return error */
     }
     if (handle->spi_deinit == NULL)                                      /* check spi_deinit */
     {
-        handle->debug_print("ws2812b: spi_deinit is null.\n");           /* spi_deinit is null */
+        handle->debug_print("ws2812b: spi_deinit is null.\r\n");           /* spi_deinit is null */
        
         return 3;                                                        /* return error */
     }
     if (handle->spi_write_cmd == NULL)                                   /* check spi_write_cmd */
     {
-        handle->debug_print("ws2812b: spi_write_cmd is null.\n");        /* spi_write_cmd is null */
+        handle->debug_print("ws2812b: spi_write_cmd is null.\r\n");        /* spi_write_cmd is null */
        
         return 3;                                                        /* return error */
     }
     if (handle->delay_ms == NULL)                                        /* check delay_ms */
     {
-        handle->debug_print("ws2812b: delay_ms is null.\n");             /* delay_ms is null */
+        handle->debug_print("ws2812b: delay_ms is null.\r\n");             /* delay_ms is null */
        
         return 3;                                                        /* return error */
     }
     
     if (handle->spi_10mhz_init() != 0)                                   /* spi init */
     {
-        handle->debug_print("ws2812b: spi init failed.\n");              /* spi init failed */
+        handle->debug_print("ws2812b: spi init failed.\r\n");              /* spi init failed */
        
         return 1;                                                        /* return error */
     }
@@ -192,13 +192,13 @@ uint8_t ws2812b_write(ws2812b_handle_t *handle, uint32_t *rgb, uint32_t len, uin
     }
     if (rgb == NULL)                                                        /* check rgb */
     {
-        handle->debug_print("ws2812b: rgb is null.\n");                     /* rgb is null */
+        handle->debug_print("ws2812b: rgb is null.\r\n");                     /* rgb is null */
        
         return 4;                                                           /* return error */
     }
     if (temp == NULL)                                                       /* check temp */
     {
-        handle->debug_print("ws2812b: temp is null.\n");                    /* temp is null */
+        handle->debug_print("ws2812b: temp is null.\r\n");                    /* temp is null */
        
         return 5;                                                           /* return error */
     }
@@ -208,7 +208,7 @@ uint8_t ws2812b_write(ws2812b_handle_t *handle, uint32_t *rgb, uint32_t len, uin
     if (bit_size > temp_len)                                                /* check temp length */
     {
         handle->debug_print("ws2812b: temp buffer is too small and "
-                            "size will be %d.\n", bit_size);                /* temp buffer is too small*/
+                            "size will be %d.\r\n", bit_size);                /* temp buffer is too small*/
        
         return 5;                                                           /* return error */
     }
@@ -218,7 +218,7 @@ uint8_t ws2812b_write(ws2812b_handle_t *handle, uint32_t *rgb, uint32_t len, uin
     }
     if (handle->spi_write_cmd(temp, (uint16_t)bit_size) != 0)               /* write command */
     {
-        handle->debug_print("ws2812b: write command failed.\n");            /* write command failed */
+        handle->debug_print("ws2812b: write command failed.\r\n");            /* write command failed */
         
         return 1;                                                           /* return error */
     }
@@ -228,7 +228,7 @@ uint8_t ws2812b_write(ws2812b_handle_t *handle, uint32_t *rgb, uint32_t len, uin
     if (bit_size > temp_len)                                                /* check temp length */
     {
         handle->debug_print("ws2812b: temp buffer is too small and "
-                            "size will be %d.\n", bit_size);                /* temp buffer is too small*/
+                            "size will be %d.\r\n", bit_size);                /* temp buffer is too small*/
        
         return 6;                                                           /* return error */
     }
@@ -240,7 +240,7 @@ uint8_t ws2812b_write(ws2812b_handle_t *handle, uint32_t *rgb, uint32_t len, uin
     
     if (handle->spi_write_cmd(temp, (uint16_t)bit_size) != 0)               /* write command */
     {
-        handle->debug_print("ws2812b: write command failed.\n");            /* write command failed */
+        handle->debug_print("ws2812b: write command failed.\r\n");            /* write command failed */
         
         return 1;                                                           /* return error */
     }
@@ -277,7 +277,7 @@ uint8_t ws2812b_write_only_reset(ws2812b_handle_t *handle, uint32_t len, uint8_t
     }
     if (temp == NULL)                                                       /* check temp */
     {
-        handle->debug_print("ws2812b: temp is null.\n");                    /* temp is null */
+        handle->debug_print("ws2812b: temp is null.\r\n");                    /* temp is null */
        
         return 4;                                                           /* return error */
     }
@@ -287,7 +287,7 @@ uint8_t ws2812b_write_only_reset(ws2812b_handle_t *handle, uint32_t len, uint8_t
     if (bit_size > temp_len)                                                /* check temp length */
     {
         handle->debug_print("ws2812b: temp buffer is too small and "
-                            "size will be %d.\n", bit_size);                /* temp buffer is too small*/
+                            "size will be %d.\r\n", bit_size);                /* temp buffer is too small*/
        
         return 5;                                                           /* return error */
     }
@@ -299,7 +299,7 @@ uint8_t ws2812b_write_only_reset(ws2812b_handle_t *handle, uint32_t len, uint8_t
     
     if (handle->spi_write_cmd(temp, (uint16_t)bit_size) != 0)               /* write command */
     {
-        handle->debug_print("ws2812b: write command failed.\n");            /* write command failed */
+        handle->debug_print("ws2812b: write command failed.\r\n");            /* write command failed */
         
         return 1;                                                           /* return error */
     }
@@ -338,13 +338,13 @@ uint8_t ws2812b_write_only_color(ws2812b_handle_t *handle, uint32_t *rgb, uint32
     }
     if (rgb == NULL)                                                        /* check rgb */
     {
-        handle->debug_print("ws2812b: rgb is null.\n");                     /* rgb is null */
+        handle->debug_print("ws2812b: rgb is null.\r\n");                     /* rgb is null */
        
         return 4;                                                           /* return error */
     }
     if (temp == NULL)                                                       /* check temp */
     {
-        handle->debug_print("ws2812b: temp is null.\n");                    /* temp is null */
+        handle->debug_print("ws2812b: temp is null.\r\n");                    /* temp is null */
        
         return 5;                                                           /* return error */
     }
@@ -354,7 +354,7 @@ uint8_t ws2812b_write_only_color(ws2812b_handle_t *handle, uint32_t *rgb, uint32
     if (bit_size > temp_len)                                                /* check temp length */
     {
         handle->debug_print("ws2812b: temp buffer is too small and "
-                            "size will be %d.\n", bit_size);                /* temp buffer is too small*/
+                            "size will be %d.\r\n", bit_size);                /* temp buffer is too small*/
        
         return 6;                                                           /* return error */
     }
@@ -366,7 +366,7 @@ uint8_t ws2812b_write_only_color(ws2812b_handle_t *handle, uint32_t *rgb, uint32
     
     if (handle->spi_write_cmd(temp, (uint16_t)bit_size) != 0)               /* write command */
     {
-        handle->debug_print("ws2812b: write command failed.\n");            /* write command failed */
+        handle->debug_print("ws2812b: write command failed.\r\n");            /* write command failed */
         
         return 1;                                                           /* return error */
     }
@@ -400,7 +400,7 @@ uint8_t ws2812b_deinit(ws2812b_handle_t *handle)
     res = handle->spi_deinit();                                      /* spi deinit */
     if (res != 0)                                                    /* check error */
     {
-        handle->debug_print("ws2812b: spi deinit failed.\n");        /* spi deinit failed */
+        handle->debug_print("ws2812b: spi deinit failed.\r\n");        /* spi deinit failed */
        
         return 1;                                                    /* return error */
     }

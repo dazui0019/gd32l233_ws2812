@@ -4,6 +4,7 @@
 #include "gd32l23x_eval.h"
 #include "basic_os.h"
 #include <stddef.h>
+#include "SEGGER_RTT.h"
 
 /* Stack for BasicOS */
 __attribute__((used)) uint8_t stack[10240];
@@ -17,7 +18,7 @@ __attribute__((used)) uint8_t stack[10240];
 
 int main(void)
 {
-
+    SEGGER_RTT_printf(0, "Hello World!\r\n");
     /* configure systick */
     systick_config();
     /* 启动BasicOS */
@@ -26,11 +27,3 @@ int main(void)
 
     return 0;
 }
-
-static void task_entry_blink(void *parameter)
-{
-    for(;;){
-        bos_delay_ms(500);
-    }
-}
-bos_task_export(blink, task_entry_blink, BOS_MAX_PRIORITY, NULL);
