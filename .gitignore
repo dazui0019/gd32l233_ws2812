@@ -1,0 +1,12 @@
+/MDK-ARM/Listings/*
+/MDK-ARM/elf/*
+/MDK-ARM/Objects/*
+!/MDK-ARM/Objects/*.sct
+/MDK-ARM/project.uvguix*
+/MDK-ARM/*.scvd
+!/MDK-ARM/project.uvprojx
+MDK-ARM/build/*
+!MDK-ARM/build/*.sct
+/MDK-ARM/build_log/*
+RTE/*
+!RTE/_project/*

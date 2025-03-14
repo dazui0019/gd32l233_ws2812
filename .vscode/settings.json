@@ -1,0 +1,69 @@
+{
+    "editor.fontSize": 16,
+    "editor.fontFamily": "'Cascadia Mono', Consolas, 'Courier New', monospace",
+    "actionButtons": {
+        "commands": [
+            {
+                "cwd": "${workspaceFolder}",
+                "name": "\ud83e\udd79Rebuild",
+                "color": "white",
+                "singleInstance": true,
+                "saveAll": true,
+                "command": ".vscode/Uv4Caller.exe -o ${workspaceFolder}/MDK-ARM/build/build.log -c 'UV4 -r ${workspaceFolder}/MDK-ARM/project.uvprojx -j0'"
+            },
+            {
+                "cwd": "${workspaceFolder}",
+                "name": "\ud83e\udd70Flash",
+                "color": "white",
+                "singleInstance": true,
+                "command": ".vscode/Uv4Caller.exe -o ${workspaceFolder}/MDK-ARM/build/build.log -c 'UV4 -f ${workspaceFolder}/MDK-ARM/project.uvprojx -j0'"
+            },
+            {
+                "cwd": "${workspaceFolder}",
+                "name": "\ud83d\udc25Keil",
+                "color": "white",
+                "singleInstance": true,
+                "command": "UV4 ${workspaceFolder}/MDK-ARM/project.uvprojx"
+            },
+            {
+                "cwd": "${workspaceFolder}",
+                "name": "\ud83e\udd14RTT Viewer",
+                "color": "white",
+                "singleInstance": true,
+                "command": "openocd -f ./.vscode/openocd_daplink.cfg -f ./.vscode/openocd_rtt.cfg & telnet localhost 8888"
+            },
+            {
+                "cwd": "${workspaceFolder}",
+                "name": "\ud83e\uddd0Monitor",
+                "color": "white",
+                "singleInstance": true,
+                "command": ".vscode/monitor.ps1"
+            }
+        ],
+        "defaultColor": "white",
+        "reloadButton": "\ud83e\udee1",
+        "loadNpmCommands": false
+    },
+    "files.associations": {
+        "gd32l23x.h": "c",
+        "systick.h": "c",
+        "core_cm23.h": "c",
+        "cmsis_compiler.h": "c",
+        "cmsis_gcc.h": "c"
+    },
+    "C_Cpp.default.includePath": [
+        "CORE\\Inc",
+        "Drivers\\GD32L23x_Firmware_Library_V2.2.0\\GD32L23x_standard_peripheral\\Include",
+        "Drivers\\GD32L23x_Firmware_Library_V2.2.0\\CMSIS\\GD\\GD32L23x\\Include",
+        "Drivers\\SEGGER_RTT_V820\\Config",
+        "Drivers\\SEGGER_RTT_V820\\RTT",
+        "Libraries\\elog\\inc",
+        "Libraries\\printf",
+        "Middlewares\\BasicOS",
+        "D:\\ProgramFiles\\Keil_v5\\ARM\\Packs\\ARM\\CMSIS\\6.1.0\\CMSIS\\Core\\Include"
+    ],
+    "C_Cpp.default.defines": [
+        "GD32L233",
+        "__ARMCC_VERSION=6220000"
+    ]
+}
