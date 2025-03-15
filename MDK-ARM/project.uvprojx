@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>GD32L233</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE\Inc;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\GD32L23x_standard_peripheral\Include;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\CMSIS\GD\GD32L23x\Include;..\Drivers\SEGGER_RTT_V820\Config;..\Drivers\SEGGER_RTT_V820\RTT;..\Libraries\elog\inc;..\Libraries\printf;..\Middlewares\BasicOS;..\Drivers\ws2812b\src;..\Drivers\ws2812b\interface</IncludePath>
+              <IncludePath>..\CORE\Inc;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\GD32L23x_standard_peripheral\Include;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\CMSIS\GD\GD32L23x\Include;..\Drivers\SEGGER_RTT_V820\Config;..\Drivers\SEGGER_RTT_V820\RTT;..\Libraries\elog\inc;..\Libraries\printf;..\Middlewares\BasicOS;..\Drivers\ws2812b\src;..\Drivers\ws2812b\interface;..\Drivers\fm175xx</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -408,6 +408,11 @@
               <FileName>ws2812_thread.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\CORE\Src\ws2812_thread.c</FilePath>
+            </File>
+            <File>
+              <FileName>thread_rfid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\CORE\Src\thread_rfid.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -772,6 +777,21 @@
               <FileName>elog_cfg.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\Libraries\elog\inc\elog_cfg.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Drivers/fm175xx</GroupName>
+          <Files>
+            <File>
+              <FileName>reader_api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\fm175xx\reader_api.c</FilePath>
+            </File>
+            <File>
+              <FileName>fm175xx_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\fm175xx\fm175xx_port.c</FilePath>
             </File>
           </Files>
         </Group>
