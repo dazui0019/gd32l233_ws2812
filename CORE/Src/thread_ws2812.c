@@ -1,4 +1,4 @@
-#include "ws2812_thread.h"
+#include "thread_ws2812.h"
 #include "basic_os.h"
 #include "SEGGER_RTT.h"
 

@@ -6,7 +6,7 @@
 #include <stddef.h>
 #include "printf.h"
 #include "elog.h"
-#include "ws2812_thread.h"
+#include "thread_ws2812.h"
 #include "thread_comm.h"
 
 /* Stack for BasicOS */

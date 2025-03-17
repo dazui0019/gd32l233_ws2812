@@ -147,34 +147,18 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>163</LineNumber>
+          <LineNumber>64</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
+          <Address>134220836</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>d:\MCU\GD32\l23x\Projects\gd32l233_ws2812\CORE\Src\comm.c</Filename>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\CORE\Src\gd32l23x_it.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>166</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>d:\MCU\GD32\l23x\Projects\gd32l233_ws2812\CORE\Src\comm.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\project\../CORE/Src/gd32l23x_it.c\64</Expression>
         </Bp>
       </Breakpoint>
       <Tracepoint>
@@ -183,7 +167,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>0</aLwin>
+        <aLwin>1</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -293,8 +277,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\CORE\Src\ws2812_thread.c</PathWithFileName>
-      <FilenameWithoutPath>ws2812_thread.c</FilenameWithoutPath>
+      <PathWithFileName>..\CORE\Src\thread_rfid.c</PathWithFileName>
+      <FilenameWithoutPath>thread_rfid.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -305,8 +289,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\CORE\Src\thread_rfid.c</PathWithFileName>
-      <FilenameWithoutPath>thread_rfid.c</FilenameWithoutPath>
+      <PathWithFileName>..\CORE\Src\thread_comm.c</PathWithFileName>
+      <FilenameWithoutPath>thread_comm.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -317,8 +301,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\CORE\Src\thread_comm.c</PathWithFileName>
-      <FilenameWithoutPath>thread_comm.c</FilenameWithoutPath>
+      <PathWithFileName>..\CORE\Src\thread_ws2812.c</PathWithFileName>
+      <FilenameWithoutPath>thread_ws2812.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

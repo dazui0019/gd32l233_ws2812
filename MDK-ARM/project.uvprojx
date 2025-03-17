@@ -405,11 +405,6 @@
               <FilePath>..\CORE\Src\gd32l23x_eval.c</FilePath>
             </File>
             <File>
-              <FileName>ws2812_thread.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\CORE\Src\ws2812_thread.c</FilePath>
-            </File>
-            <File>
               <FileName>thread_rfid.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\CORE\Src\thread_rfid.c</FilePath>
@@ -418,6 +413,11 @@
               <FileName>thread_comm.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\CORE\Src\thread_comm.c</FilePath>
+            </File>
+            <File>
+              <FileName>thread_ws2812.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\CORE\Src\thread_ws2812.c</FilePath>
             </File>
           </Files>
         </Group>

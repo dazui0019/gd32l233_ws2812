@@ -62,7 +62,8 @@
         "fm175xx_port.h": "c",
         "comm.h": "c",
         "lwrb.h": "c",
-        "thread_comm.h": "c"
+        "thread_comm.h": "c",
+        "thread_ws2812.h": "c"
     },
     "C_Cpp.default.includePath": [
         "CORE\\Inc",
