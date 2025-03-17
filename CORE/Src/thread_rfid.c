@@ -1,6 +1,6 @@
 #include "thread_rfid.h"
 #include "basic_os.h"
-#include "comm.h"
+#include "thread_comm.h"
 
 extern struct picc_a_struct PICC_A;
 extern struct picc_b_struct PICC_B;
@@ -54,7 +54,6 @@ void task_entry_rfid(void *parameter)
 
     rfid_init();
     FM175XX_HardReset();
-    comm_usart_init();
 
     for(;;){
         bos_delay_ms(200);

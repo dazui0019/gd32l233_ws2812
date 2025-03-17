@@ -7,6 +7,7 @@
 #include "printf.h"
 #include "elog.h"
 #include "ws2812_thread.h"
+#include "thread_comm.h"
 
 /* Stack for BasicOS */
 __attribute__((used)) uint8_t stack[5120];
@@ -15,6 +16,7 @@ int main(void)
 {
     elog_init();
     elog_start();
+    comm_init();
     log_i("Hello, World!");
     /* configure systick */
     systick_config();
