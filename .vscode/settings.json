@@ -61,7 +61,8 @@
         "elog.h": "c",
         "fm175xx_port.h": "c",
         "comm.h": "c",
-        "lwrb.h": "c"
+        "lwrb.h": "c",
+        "thread_comm.h": "c"
     },
     "C_Cpp.default.includePath": [
         "CORE\\Inc",
@@ -75,6 +76,7 @@
         "Drivers\\ws2812b\\src",
         "Drivers\\ws2812b\\interface",
         "Drivers\\fm175xx",
+        "Libraries\\lwrb",
         "D:\\ProgramFiles\\Keil_v5\\ARM\\Packs\\ARM\\CMSIS\\6.1.0\\CMSIS\\Core\\Include"
     ],
     "C_Cpp.default.defines": [

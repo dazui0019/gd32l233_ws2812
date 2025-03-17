@@ -415,9 +415,9 @@
               <FilePath>..\CORE\Src\thread_rfid.c</FilePath>
             </File>
             <File>
-              <FileName>comm.c</FileName>
+              <FileName>thread_comm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\CORE\Src\comm.c</FilePath>
+              <FilePath>..\CORE\Src\thread_comm.c</FilePath>
             </File>
           </Files>
         </Group>
