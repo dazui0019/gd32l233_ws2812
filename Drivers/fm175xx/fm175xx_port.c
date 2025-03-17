@@ -195,7 +195,8 @@ uint8_t FM175XX_HardPowerdown(uint8_t mode)
 }
 
 void print_id(const uint8_t id[], uint8_t length){
-    log_i("Card ID: ");
+    log_d("Card Detected!");
+    elog_raw("Card ID: ");
     for(uint8_t i = 0; i < length; i++) {
         elog_raw("%02X ", id[i]);
     }
@@ -213,26 +214,6 @@ void send_card(const uint8_t card_id[], uint8_t length){
     }
     frame[4+length] = sum % 256;
     UART_Transmit(USART0, frame, 4+length+1);
-}
-
-/**
- * @brief  Sends an amount of data in blocking mode.(不带超时检测)
-*/
-void UART_Transmit(uint32_t usart_periph, const uint8_t *pData, uint16_t Size)
-{
-    const uint8_t  *pdata8bits = pData;
-    uint16_t count = Size;
-    if ((pData == NULL) || (Size == 0U))
-    {
-        return;
-    }
-    while (count > 0U)
-    {
-        USART_TDATA(usart_periph) = USART_TDATA_TDATA & *pdata8bits;
-        while(RESET == (USART_REG_VAL(usart_periph, USART_FLAG_TBE) & BIT(USART_BIT_POS(USART_FLAG_TBE))));
-        pdata8bits++;
-        count--;
-    }
 }
 
 void fms175xx_delay_ms(uint32_t ms)

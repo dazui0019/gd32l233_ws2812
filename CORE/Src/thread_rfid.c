@@ -1,5 +1,6 @@
 #include "thread_rfid.h"
 #include "basic_os.h"
+#include "comm.h"
 
 extern struct picc_a_struct PICC_A;
 extern struct picc_b_struct PICC_B;
@@ -53,9 +54,10 @@ void task_entry_rfid(void *parameter)
 
     rfid_init();
     FM175XX_HardReset();
+    comm_usart_init();
 
     for(;;){
-        bos_delay_ms(10);
+        bos_delay_ms(200);
 
         if(Reader_Polling(&polling_card) != FM175XX_SUCCESS){
             card_detected_flag = RESET;
@@ -67,14 +69,14 @@ void task_entry_rfid(void *parameter)
         if(polling_card & BIT0){ // TYPE A
             result = TYPE_A_CARD_EVENT();
             if(FM175XX_SUCCESS == result){
-                // send_card(PICC_A.UID, 4);
+                send_card(PICC_A.UID, 4);
                 print_id(PICC_A.UID, 4);
                 card_detected_flag = SET;
             }
         }else if(polling_card & BIT1){ // TYPE B
             result = TYPE_B_CARD_EVENT();
             if(FM175XX_SUCCESS == result){
-                // send_card(PICC_B.UID, 8);
+                send_card(PICC_B.UID, 8);
                 print_id(PICC_A.UID, 4);
                 card_detected_flag = SET;
             }
