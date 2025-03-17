@@ -11,14 +11,14 @@ void rfid_spi_init(void)
     rcu_periph_clock_enable(RCU_GPIOA);
 
     /* configure SPI1 GPIO : SCK/PB3 */
-    gpio_af_set(GPIOB, GPIO_AF_5,  GPIO_PIN_3);
+    gpio_af_set(GPIOB, GPIO_AF_6,  GPIO_PIN_3);
     gpio_mode_set(GPIOB, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO_PIN_3);
     gpio_output_options_set(GPIOB, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_3);
     /* configure SPI1 GPIO : NSS/PA15 */
     gpio_mode_set(GPIOA, GPIO_MODE_OUTPUT, GPIO_PUPD_NONE, GPIO_PIN_15);
     gpio_output_options_set(GPIOA, GPIO_OTYPE_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_15);
     /* configure SPI1 GPIO : MISO/PB4, MOSI/PB5 */
-    gpio_af_set(GPIOB, GPIO_AF_5,  GPIO_PIN_4 | GPIO_PIN_5);
+    gpio_af_set(GPIOB, GPIO_AF_6,  GPIO_PIN_4 | GPIO_PIN_5);
     gpio_mode_set(GPIOB, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO_PIN_4 | GPIO_PIN_5);
 
     spi_parameter_struct spi_init_struct;
@@ -32,14 +32,11 @@ void rfid_spi_init(void)
     spi_init_struct.trans_mode           = SPI_TRANSMODE_FULLDUPLEX;
     spi_init_struct.device_mode          = SPI_MASTER;
     spi_init_struct.frame_size           = SPI_FRAMESIZE_8BIT;
-    spi_init_struct.clock_polarity_phase = SPI_CK_PL_HIGH_PH_2EDGE;
+    spi_init_struct.clock_polarity_phase = SPI_CK_PL_LOW_PH_1EDGE;
     spi_init_struct.nss                  = SPI_NSS_SOFT;
     spi_init_struct.prescale             = SPI_PSC_64;
     spi_init_struct.endian               = SPI_ENDIAN_MSB;
     spi_init(SPI1, &spi_init_struct);
-
-    /* configure SPI1 byte access to FIFO */
-    spi_fifo_access_size_config(SPI1, SPI_BYTE_ACCESS);
     
     /* enable SPI1 */
     spi_enable(SPI1);
@@ -125,7 +122,7 @@ uint8_t FM175XX_SoftReset(void)
     if(reg_data == 0x20)
         return FM175XX_SUCCESS;
     else
-        log_w("FM175XX SoftReset Error\r\n");
+        log_w("FM175XX SoftReset Error.");
     return FM175XX_RESET_ERROR;
 }
 
