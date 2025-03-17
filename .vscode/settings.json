@@ -60,7 +60,8 @@
         "basic_os.h": "c",
         "elog.h": "c",
         "fm175xx_port.h": "c",
-        "comm.h": "c"
+        "comm.h": "c",
+        "lwrb.h": "c"
     },
     "C_Cpp.default.includePath": [
         "CORE\\Inc",

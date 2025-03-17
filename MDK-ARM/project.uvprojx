@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>GD32L233</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE\Inc;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\GD32L23x_standard_peripheral\Include;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\CMSIS\GD\GD32L23x\Include;..\Drivers\SEGGER_RTT_V820\Config;..\Drivers\SEGGER_RTT_V820\RTT;..\Libraries\elog\inc;..\Libraries\printf;..\Middlewares\BasicOS;..\Drivers\ws2812b\src;..\Drivers\ws2812b\interface;..\Drivers\fm175xx</IncludePath>
+              <IncludePath>..\CORE\Inc;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\GD32L23x_standard_peripheral\Include;..\Drivers\GD32L23x_Firmware_Library_V2.2.0\CMSIS\GD\GD32L23x\Include;..\Drivers\SEGGER_RTT_V820\Config;..\Drivers\SEGGER_RTT_V820\RTT;..\Libraries\elog\inc;..\Libraries\printf;..\Middlewares\BasicOS;..\Drivers\ws2812b\src;..\Drivers\ws2812b\interface;..\Drivers\fm175xx;..\Libraries\lwrb</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -797,6 +797,16 @@
               <FileName>fm175xx_port.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Drivers\fm175xx\fm175xx_port.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Libraries/lwrb</GroupName>
+          <Files>
+            <File>
+              <FileName>lwrb.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Libraries\lwrb\lwrb.c</FilePath>
             </File>
           </Files>
         </Group>
